@@ -1,0 +1,172 @@
+<ion-view view-title="Google Maps V3 example" class="map-view" onload="initialize();">
+  <ion-content data-tap-disabled="true">
+
+    <div id="mapa">
+      <!-- Este div se va a esconder y va a dar paso al div que contiene el formulario -->
+      <input type="text" id="inputAux" style="display:none;">
+      <div id="panel">
+        <div id="color-palette"></div>
+        <div>
+          <button id="delete-button">Delete Selected Shape</button>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+
+
+    <div id="formulario" class="hide">
+
+
+      		<div class="container" id="form">
+      			<div class="row">
+      				<div class="col s12">
+      					<div class="row">
+      						<div class="input-field col s12">
+      							<input id="last_name" type="text" class="validate">
+      							<label for="last_name">Nombre</label>
+      						</div>
+      					</div>
+      					<div class="row" ng-repeat="coordenada in coordenadas">
+      						<div class="input-field col s6">
+      							<input id="last_name" type="text" class="validate">
+      							<label for="last_name">coordenada.lat</label>
+      						</div>
+      						<div class="input-field col s6">
+      							<input id="last_name" type="text" class="validate">
+      							<label for="last_name">Longitud</label>
+      						</div>
+      					</div>
+      					<div class="row">
+      						<div class="input-field col s12">
+      							<input type="date" class="datepicker" value="">
+      							<label for="last_name">Fecha</label>
+      						</div>
+      					</div>
+      					<div class="input-field col s12">
+      						<label for="last_name">Tome algunas fotos</label>
+      						<br>
+      						<br>
+
+      						<div class="">
+      							<div class="input-field col s2">
+      								<a class="btn-floating waves-effect waves-light purple"><i class="material-icons">add</i></a>
+      							</div>
+      							<div class="input-field col s10">
+      								<input id="last_name" type="text" class="validate">
+      								<label for="last_name">Nota foto 1</label>
+      							</div>
+      						</div>
+
+      						<div class="">
+      							<div class="input-field col s2">
+      								<a class="btn-floating waves-effect waves-light purple"><i class="material-icons">add</i></a>
+      							</div>
+      							<div class="input-field col s10">
+      								<input id="last_name" type="text" class="validate">
+      								<label for="last_name">Nota foto 2</label>
+      							</div>
+      						</div>
+
+      						<div class="">
+      							<div class="input-field col s2">
+      								<a class="btn-floating waves-effect waves-light purple"><i class="material-icons">add</i></a>
+      							</div>
+      							<div class="input-field col s10">
+      								<input id="last_name" type="text" class="validate">
+      								<label for="last_name">Nota foto 3</label>
+      							</div>
+      						</div>
+
+      						<div class="">
+      							<div class="input-field col s2">
+      								<a class="btn-floating waves-effect waves-light purple"><i class="material-icons">add</i></a>
+      							</div>
+      							<div class="input-field col s10">
+      								<input id="last_name" type="text" class="validate">
+      								<label for="last_name">Nota foto 4</label>
+      							</div>
+      						</div>
+
+      						<div class="row">
+      							<div class="input-field col s12">
+      								<textarea id="textarea1" class="materialize-textarea"></textarea>
+      								<label for="textarea1">Nota de investigacion</label>
+      							</div>
+      						</div>
+
+
+
+
+
+
+      						<div class="col s12">
+      							<div class="col s2">
+      								<p>
+      									<input type="checkbox" id="test1" />
+      									<label for="test1">Oro</label>
+      								</p>
+      							</div>
+
+      						</div>
+      						<div class="col s12">
+      							<div class="col s2">
+      								<p>
+      									<input type="checkbox" id="test1" />
+      									<label for="test1">Oro</label>
+      								</p>
+      							</div>
+
+      						</div>
+      						<div class="col s12">
+      							<div class="col s2">
+      								<p>
+      									<input type="checkbox" id="test1" />
+      									<label for="test1">Oro</label>
+      								</p>
+      							</div>
+      						</div>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+
+    </div>
+
+    <!-- <div id="modal3" class="modal bottom-sheet" style="z-index: 1003; display: block; opacity: 1; bottom: 0px;">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <ul class="collection">
+                  <li class="collection-item avatar">
+                    <img src="images/yuna.jpg" alt="" class="circle">
+                    <span class="title">Title</span>
+                    <p>First Line <br> Second Line </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                  </li>
+                  <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br> Second Line </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                  </li>
+                  <li class="collection-item avatar">
+                    <i class="material-icons circle green">assessment</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br> Second Line </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                  </li>
+                  <li class="collection-item avatar">
+                    <i class="material-icons circle red">play_arrow</i>
+                    <span class="title">Title</span>
+                    <p>First Line <br> Second Line </p>
+                    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+
+
+
+
+  </ion-content>
+
+</ion-view>

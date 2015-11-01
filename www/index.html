@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/materialize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=drawing"></script>
+<!-- ionic/angularjs js -->
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+<!-- cordova script (this will be a 404 during development) -->
+<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+
+
+<script src="js/app.js"></script>
+<script src="js/config/platform.js"></script>
+<script src="js/config/router.js"></script>
+<script src="js/controllers/welcomeCtrl.js"></script>
+
+
+<!-- your app's js -->
+
+</head>
+<body ng-app="starter">
+  <header>
+    <nav class=" red darken-4">
+      <ul id="slide-out" class="side-nav">
+        <li class="active"><a ><i class="ion-android-more-vertical"></i> Menu</a></li>
+        <li><a ui-sref="form"><i class="ion-clipboard"></i> Ingresar lugar</a></li>
+        <li><a ui-sref="map"><i class="ion-android-pin"></i> Ver Mapa</a></li>
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="ion-android-more-horizontal"></i></a>
+    </nav>
+  </header>
+
+  <ion-nav-view>
+
+  </ion-nav-view>
+
+
+  <script type="text/javascript" src="lib/materialize.js"></script>
+
+  <script type="text/javascript">
+  $(".button-collapse").sideNav();
+  </script>
+</body>
+</html>
