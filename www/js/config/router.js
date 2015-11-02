@@ -5,16 +5,21 @@
     .state('welcome', {
       url        : '/welcome',
       templateUrl: 'templates/welcome.html',
-      controller : 'welcomeCtrl',
+      controller : 'welcomeController',
       params     : {
         isRedirect: false
       }
     })
-    .state('form', {
-      url: '/form',
-      templateUrl: 'templates/form.html',
-      controller: 'FormController'
-    })
+    // .state('form', {
+    //   url: '/form:positions',
+    //   templateUrl: 'templates/form.html',
+    //   controller: 'FormController',
+    //   resolve: {
+    //     positions: ['$stateParams', function($stateParams) {
+    //       return $stateParams.positions;
+    //     }]
+    //   }
+    // })
 
 
     $urlRouterProvider.otherwise('/welcome');
