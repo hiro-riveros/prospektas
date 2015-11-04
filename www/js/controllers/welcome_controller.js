@@ -238,7 +238,14 @@
 
 		};
 
-
+		$('.floating-button').leanModal({
+      dismissible: false, // Modal can be dismissed by clicking outside of the modal
+      opacity: 0.5, // Opacity of modal background
+      in_duration: 500, // Transition in duration
+      out_duration: 300, // Transition out duration
+      ready: function() { console.info('Ready'); }, // Callback for Modal open
+      complete: function() { console.info('Closed'); } // Callback for Modal close
+    });
 
 
 

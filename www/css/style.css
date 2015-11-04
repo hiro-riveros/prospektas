@@ -39,9 +39,34 @@ height: calc(100vh - 43px);
 	margin-top: 5px;
 }
 
-
-
 .form-container {
 	overflow-y: scroll;
   max-height: 640px;
+}
+
+.floating-button {
+	margin-left: 36%;
+	position: absolute;
+	top: 90%;
+	z-index: 2;
+}
+
+
+/*
+====================
+	IONIC OVERWRITE
+====================
+*/
+
+.modal.demo {
+	position: absolute;
+	min-height: 37%;
+}
+
+.modal-close {
+	margin-left: 98%;	
+}
+
+.lean-overlay {
+	top: -473px;
 }
