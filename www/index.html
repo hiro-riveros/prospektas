@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
 
   <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -33,7 +34,7 @@
 
 </head>
 <body ng-app="starter">
-  <header>
+  <!-- <header>
     <nav class=" red darken-4">
       <ul id="slide-out" class="side-nav">
         <li class="active"><a><i class="ion-android-more-vertical"></i> Menu</a></li>
@@ -42,7 +43,7 @@
       </ul>
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="ion-android-more-horizontal"></i></a>
     </nav>
-  </header>
+  </header> -->
 
   <ion-nav-view>
 
@@ -52,7 +53,10 @@
   <script type="text/javascript" src="lib/materialize.js"></script>
 
   <script type="text/javascript">
-  $(".button-collapse").sideNav();
+  $(document).ready(function(){
+   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+   $('.modal-trigger').leanModal();
+ });
   </script>
 </body>
 </html>

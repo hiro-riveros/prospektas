@@ -1,8 +1,17 @@
-#map, html, body {
+.hide{
+	display: none;
+}
+
+, html, body {
 	padding: 0;
 	margin: 0;
-	width: 960px;
-	height: 700px;
+	width: 100%;
+	height: 100%;
+}
+
+#map{
+width: 100%;
+height: calc(100vh - 43px);
 }
 
 #panel {
@@ -30,9 +39,7 @@
 	margin-top: 5px;
 }
 
-#hide{
-	displa: none;
-}
+
 
 .form-container {
 	overflow-y: scroll;

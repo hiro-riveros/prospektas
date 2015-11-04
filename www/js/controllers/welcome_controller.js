@@ -13,7 +13,9 @@
 
 
 		var clearSelection = function () {
+
 			if (selectedShape) {
+
 				if (selectedShape.type !== 'marker') {
 					selectedShape.setEditable(false);
 				};
@@ -22,6 +24,7 @@
 		};
 
 		var setSelection = function (shape) {
+
 			if (shape.type !== 'marker') {
 				clearSelection();
 				shape.setEditable(true);
@@ -112,6 +115,7 @@
 			// Creates a drawing manager attached to the map that allows the user to draw
 			// markers, lines, and shapes.
 			drawingManager = new google.maps.drawing.DrawingManager({
+
 				drawingMode: google.maps.drawing.OverlayType.POLYGON,
 				markerOptions: {
 					draggable: true
@@ -141,8 +145,8 @@
 				$scope.coords = data;
 
 				var confirmPopup = $ionicPopup.confirm({
-		     	title: 'pasar al formulario',
-		     	template: 'estas seguro de pasar al formulario para guardar los datos'
+		     	title: 'Pasar al formulario',
+		     	template: 'Estas seguro de pasar al formulario para guardar los datos.'
 		   	});
 		   confirmPopup.then(function(response) {
 		     	if(response) {
@@ -150,7 +154,7 @@
 		     		document.getElementById('map-container').classList.add('hide');
 		     		document.getElementById('form').classList.remove('hide');
 		     	} else {
-						selectedShape = null;
+						deleteSelectedShape();
 		     	};
 		   });
 
