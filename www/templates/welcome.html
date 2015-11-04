@@ -1,8 +1,9 @@
 <ion-view class="map-view">
 	<header >
 	<div class="bar bar-header ">
-  <button class="button button-icon icon ion-navicon"></button>
-  <div class="h1 title">Header Buttons</div>
+  <button class="button button-icon icon ion-navicon" id="menu"></button>
+	<button class="button button-icon icon ion-ios-arrow-back hide" id="back" ng-click="back();"></button>
+  <div class="h1 title" id="welcome_title"><i class="ion-location"> </i>Map </div>
 
 	<header>
 </div>
@@ -124,9 +125,8 @@
 
 
 </ion-content>
-<div class="bar bar-footer">
-  <button class="button button-clear">Left</button>
-  <div class="title">Title</div>
-  <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-</div>
+<div class="bar bar-footer" style="padding:0px;height:36px;">
+	<div class="button-bar">
+	<a class="waves-effect waves-light btn" style="width:100%">Layers</a>
+	</div>
 </ion-view>

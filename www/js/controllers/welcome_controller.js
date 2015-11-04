@@ -12,6 +12,7 @@
 		var fullArray={};
 
 
+
 		var clearSelection = function () {
 
 			if (selectedShape) {
@@ -153,6 +154,10 @@
 		     		selectedShape = null;
 		     		document.getElementById('map-container').classList.add('hide');
 		     		document.getElementById('form').classList.remove('hide');
+						document.getElementById('menu').classList.add('hide');
+		     		document.getElementById('back').classList.remove('hide');
+						document.getElementById('welcome_title').innerHTML = "Formulario <i class='icon ion-clipboard'></i> ";
+						document.getElementById('').innerHTML = "Guardar";
 		     	} else {
 						deleteSelectedShape();
 		     	};
@@ -237,6 +242,15 @@
 		  });
 
 		};
+
+		$scope.back=function () {
+			document.getElementById('map-container').classList.remove('hide');
+			document.getElementById('form').classList.add('hide');
+			document.getElementById('menu').classList.remove('hide');
+			document.getElementById('back').classList.add('hide');
+
+		}
+
 
 
 
