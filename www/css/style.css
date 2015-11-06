@@ -11,16 +11,10 @@
 
 #map{
 width: 100%;
-height: calc(100vh - 36px);
+/*height: calc(100vh - 33px);*/
+height: 100vh ;
 }
 
-#panel {
-	width: 200px;
-	font-family: Arial, sans-serif;
-	font-size: 13px;
-	float: right;
-	margin: 10px;
-}
 
 #color-palette {
 	clear: both;
@@ -41,11 +35,11 @@ height: calc(100vh - 36px);
 
 .form-container {
 	overflow-y: scroll;
-  max-height: 640px;
+  max-height: 100vh;
 }
 
-.floating-button {
-	margin-left: 36%;
+ .floating-button{
+	margin-left: 20%;
 	position: absolute;
 	top: 90%;
 	z-index: 2;
@@ -64,9 +58,22 @@ height: calc(100vh - 36px);
 }
 
 .modal-close {
-	margin-left: 98%;	
+	margin-left: 98%;
 }
 
 .lean-overlay {
-	top: -473px;
+	top: -68vh;
 }
+
+.header{
+	color: #4a148c;
+font-weight: 300;
+}
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+	color: #6a1b9a; }
+
+
+	input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #4a148c;
+    box-shadow: 0 1px 0 0 #4a148c; }
