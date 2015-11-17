@@ -1,7 +1,7 @@
 (function (){
-	this.app.controller('welcomeController', ['$scope', '$log', '$state', '$stateParams' , '$ionicPopup', '$cordovaCamera','$cordovaImagePicker',
-		function($scope, $log, $state, $stateParams, $ionicPopup, $cordovaCamera, $cordovaImagePicker){
-		// debugger;
+	this.app.controller('welcomeController', ['$scope', '$log', '$state', '$stateParams' , '$ionicPopup', '$cordovaCamera','$cordovaImagePicker', '$cordovaGeolocation',
+		function($scope, $log, $state, $stateParams, $ionicPopup, $cordovaCamera, $cordovaImagePicker, $cordovaGeolocation){
+
 		var drawingManager;
 		var selectedShape;
 		var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
@@ -11,14 +11,40 @@
 		var coord = {};
 		var fullArray={};
 		var confirmPopup ;
-		var a=0;
+		var a = 0;
 
+		var posOptions = {timeout: 12000, enableHighAccuracy: true};
+	  $cordovaGeolocation
+	    .getCurrentPosition(posOptions)
+	    .then(function (position) {
+	      var lat  = position.coords.latitude
+	      var long = position.coords.longitude
+	      alert('toma tu puto alert con latitude: '+ lat +' longitude: ' + long );
+	    }, function(err) {
+	      // error
+	      alert('que paso antes eras chevere: ' + err[0]);
+	    });
+	   var watchOptions = {
+    	timeout : 10000,
+    	enableHighAccuracy: true // may cause errors if true
+ 		 };
+
+	  	var watch = $cordovaGeolocation.watchPosition(watchOptions);
+	  	watch.then(
+		    null,
+		    function(err) {
+		      // error
+		      alert('que paso antes eras chevere: ' + err);
+		    },
+		    function(position) {
+		      var lat  = position.coords.latitude;
+		      var long = position.coords.longitude;
+		      alert('y si miro tu posicion latitude: '+ lat +' longitude: ' + long );
+	  	});
 
 
 		var clearSelection = function () {
-
 			if (selectedShape) {
-
 				if (selectedShape.type !== 'marker') {
 					selectedShape.setEditable(false);
 				};
