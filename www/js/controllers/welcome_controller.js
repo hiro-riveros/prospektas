@@ -1,4 +1,5 @@
 (function (){
+
 	this.app.controller('welcomeController', ['$scope', '$log', '$state', '$stateParams' , '$ionicPopup', '$cordovaCamera','$cordovaImagePicker', '$cordovaGeolocation',
 		function($scope, $log, $state, $stateParams, $ionicPopup, $cordovaCamera, $cordovaImagePicker, $cordovaGeolocation){
 
@@ -10,6 +11,7 @@
 		var arraySecond = {};
 		var coord = {};
 		var fullArray={};
+
 		var confirmPopup ;
 		var a = 0;
 
@@ -41,6 +43,23 @@
 		      var long = position.coords.longitude;
 		      alert('y si miro tu posicion latitude: '+ lat +' longitude: ' + long );
 	  	});
+=======
+		// var lat = ;
+		// var long = ;
+
+		var a=0;
+
+>>>>>>> 411b1310eff8a6dbe224167748736c52116a90bd
+
+
+		/**
+		**---------------------------
+		añadir posicionamiento automatico
+		añadir posicionamiento manual a travez de un pop-up
+		declarar las variables globales
+		---------------------------**
+		**/
+
 
 
 		var clearSelection = function () {
@@ -176,11 +195,11 @@
 
 				drawingMode: google.maps.drawing.OverlayType.POLYGON,
 				markerOptions: {
-					draggable: true
+					draggable: false
 				},
 				polylineOptions: {
-					editable: true,
-					draggable: true
+					editable: false,
+					draggable: false
 				},
 				rectangleOptions: polyOptions,
 				circleOptions: polyOptions,
@@ -189,9 +208,22 @@
 			});
 
 			google.maps.event.addListener(drawingManager, 'overlaycomplete', function (e) {
+
 				var data = [];
 				var inputAux = document.getElementById("input-aux");
-				inputAux.value = e.overlay.getPath().getArray();
+
+				try {
+					//intenta rescatar obtener los datos de un poligono
+				     inputAux.value = e.overlay.getPath().getArray();
+				}
+				catch(err) {
+					//en caso de que no sea un poligono dejaremos pasar el error
+					inputAux.value = e.overlay.getBounds();
+
+				}
+
+
+				alert(inputAux.value);
 				var shapeValues = inputAux.value.split('),');
 				for (var i = 0; i < shapeValues.length; i++) {
 					var coord = shapeValues[i].split(',');
@@ -205,28 +237,39 @@
 
 
 
-					var confirmPopup = $ionicPopup.confirm({
+					var confirmPopup = $ionicPopup.alert({
 						title: 'Prospektas',
 						template: 'Confirmacion de coordenadas escogidas.</br>	<div class="progress"><div class="indeterminate"></div></div>'
 					});
 				 confirmPopup.then(function(response) {
 						if(response) {
 
-								selectedShape = null;
-								document.getElementById('map-container').classList.add('hide');
-								document.getElementById('form').classList.remove('hide');
-								document.getElementById('menu').classList.add('hide');
-								document.getElementById('back').classList.remove('hide');
-								document.getElementById('welcome_title').innerHTML = "Formulario <i class='icon ion-clipboard'></i> ";
-								document.getElementById('magic-bubble').classList.remove('hide')
+							confirmPopup.close(); //close the popup after 3 seconds for some reason
+					 	 selectedShape = null;
+					 	 document.getElementById('map-container').classList.add('hide');
+					 	 document.getElementById('form').classList.remove('hide');
+					 	 document.getElementById('menu').classList.add('hide');
+					 	 document.getElementById('back').classList.remove('hide');
+					 	 document.getElementById('welcome_title').innerHTML = "Formulario <i class='icon ion-clipboard'></i> ";
+					 	 document.getElementById('magic-bubble-form').classList.remove('hide')
+					 	 document.getElementById('magic-bubble-map').classList.add('hide')
 
 
-						} else {
-							initialize();
-
-
-						};
+						}
 				 });
+				 $timeout(function() {
+					 confirmPopup.close(); //close the popup after 3 seconds for some reason
+					 selectedShape = null;
+					 document.getElementById('map-container').classList.add('hide');
+					 document.getElementById('form').classList.remove('hide');
+					 document.getElementById('menu').classList.add('hide');
+					 document.getElementById('back').classList.remove('hide');
+					 document.getElementById('welcome_title').innerHTML = "Formulario <i class='icon ion-clipboard'></i> ";
+					 document.getElementById('magic-bubble-form').classList.remove('hide')
+					 document.getElementById('magic-bubble-map').classList.add('hide')
+				}, 3000);
+
+
 
 
 
@@ -250,6 +293,16 @@
 									newShape.setMap(null);
 								};
 							};
+
+
+								if (newShape.type === google.maps.drawing.OverlayType.RECTANGLE) {
+									var path = newShape.getPaths().getAt(e.path);
+									path.removeAt(e.vertex);
+									if (path.length < 3) {
+										newShape.setMap(null);
+									};
+								};
+
 							if (newShape.type === google.maps.drawing.OverlayType.POLYLINE) {
 								var path = newShape.getPath();
 								path.removeAt(e.vertex);
@@ -328,7 +381,8 @@
 			document.getElementById('form').classList.add('hide');
 			document.getElementById('menu').classList.remove('hide');
 			document.getElementById('back').classList.add('hide');
-			 document.getElementById('magic-bubble').classList.add('hide') ;
+			 document.getElementById('magic-bubble-form').classList.add('hide') ;
+			 document.getElementById('magic-bubble-map').classList.remove('hide') ;
 			// 	constructor() {
 			//
 			// 	}
@@ -337,6 +391,11 @@
 
 
 		}
+
+
+
+
+
 
 
 
@@ -389,9 +448,18 @@
     }, function(error) {
       // error getting photos
     });
-
-
 	};
+
+// 	var posOptions = {timeout: 10000, enableHighAccuracy: false};
+// $cordovaGeolocation
+// 	.getCurrentPosition(posOptions)
+// 	.then(function (position) {
+// 		 lat  = position.coords.latitude
+// 		 long = position.coords.longitude
+// 		 alert()
+// 	}, function(err) {
+// 		// error
+// 	});
 
 
 

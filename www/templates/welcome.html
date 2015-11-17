@@ -1,94 +1,96 @@
 <ion-view class="map-view">
 	<header >
-		<div class="bar bar-header ">
+		<div class="bar bar-header">
 			<button class="button button-icon icon ion-navicon" id="menu"></button>
 			<button class="button button-icon icon ion-ios-arrow-back hide" id="back" ng-click="back();"></button>
 			<div class="h1 title" id="welcome_title"><i class="ion-location"> </i>Map </div>
+			<button class="button button-clear icon ion-gear-a modal-trigger floating-button" data-target="modal1"></button>
+		</div>
+	</header>
 
-			<header>
+	<ion-content data-tap-disabled="true">
+
+		<div id="map-container">
+			<!-- Este div se va a esconder y va a dar paso al div que contiene el formulario -->
+			<input type="text" id="input-aux" class="hide">
+			<div id="map">
 			</div>
-			<ion-content data-tap-disabled="true">
+			<!-- <a  class="floating-button  waves-effect waves-light btn purple darken-4" style="font-weight:600px;">Configuraciones</a> -->
 
-				<div id="map-container">
-					<!-- Este div se va a esconder y va a dar paso al div que contiene el formulario -->
-					<input type="text" id="input-aux" class="hide">
-
-					<div id="map">
-
+		</div>
+		<div id="modal1" class="modal bottom-sheet demo">
+			<div class="modal-content">
+				<span class="modal-close">x</button>
+					<h4>Colores</h4>
+					<div id="panel" class="hide" >
+						<div id="color-palette"></div>
+						<div>
+							<button id="delete-button">Delete Selected Shape</button>
+						</div>
 					</div>
-					<a data-target="modal1" class="floating-button modal-trigger waves-effect waves-light btn purple darken-4" style="font-weight:600px;">Configuraciones</a>
-
-
 
 				</div>
-
-
-
-
-
-
-
-				Modal Structure
-				<div id="modal1" class="modal bottom-sheet demo">
-					<div class="modal-content">
-						<span class="modal-close">x</button>
-							<h4>Colores</h4>
-							<div id="panel" class="hide" >
-								<div id="color-palette"></div>
-								<div>
-									<button id="delete-button">Delete Selected Shape</button>
-								</div>
-							</div>
-
-</div>
-</div>
-
-<div class="container form-container hide" id="form" style="margin-top:40px;margin-bottom:40px;" >
-
-
-	<div class="col s12">
-
-		<div class="input-field col s12">
-			<input id="last_name" type="text" class="validate col s12">
-			<label for="last_name" >Nombre</label>
-		</div>
-
-		<div class="section" ng-repeat="coord in coords">
-
- <h5 class="header">cordenada  {{$index +1}} </h5>
-			<div class="input-field col s6">
-				<input id="latitude" disabled type="text" ng-model="coord.lat" class="validate">
-				<label for="latitude" class="active">Latitude</label>
 			</div>
-			<div class="input-field col s6">
-				<input id="longitude" disabled type="text" ng-model="coord.long" class="validate">
-				<label for="longitude" class="active">Longitud</label>
-			</div>0
-		</div>
+
+			<div class="container form-container hide" id="form" style="margin-top:40px;margin-bottom:40px;" >
 
 
-			<div class="row">
-				<div class="input-field col s12">
-					<textarea id="textarea1" class="materialize-textarea"></textarea>
-					<label for="textarea1">Nota de investigacion</label>
+				<div class="col s12">
+
+					<div class="input-field col s12">
+						<input id="last_name" type="text" class="validate col s12">
+						<label for="last_name" >Nombre</label>
+					</div>
+
+					<div class="section" ng-repeat="coord in coords">
+
+						<h5 class="header">cordenada  {{$index +1}} </h5>
+						<div class="input-field col s6">
+							<input id="latitude" disabled type="text" ng-model="coord.lat" class="validate">
+							<label for="latitude" class="active">Latitude</label>
+						</div>
+						<div class="input-field col s6">
+							<input id="longitude" disabled type="text" ng-model="coord.long" class="validate">
+							<label for="longitude" class="active">Longitud</label>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="input-field col s12">
+							<textarea id="textarea1" class="materialize-textarea"></textarea>
+							<label for="textarea1">Nota de investigacion</label>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</ion-content>
+
+	<div class="fixed-action-btn hide" style="bottom: 30px; right: 14px;" hover="" id="magic-bubble-form">
+		<a class="btn-floating  waves-effect waves-light btn-large red">
+			<i class="icon ion-plus"></i>
+
+		</a>
+		<ul>
+
+			<li><a class=" waves-effect waves-light btn-floating pink darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-image"></i></a></li>
+			<li><a class=" waves-effect waves-light btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-microphone"></i></a></li>
+			<li ng-click="pickAPicture();"><a class="btn-floating  waves-effect waves-light orange darken-2" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-attach"></i></a></li>
+			<li ng-click="takePicture();"><a class="btn-floating  waves-effect waves-light blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;" ><i class="icon ion-camera"></i></a></li>
+		</ul>
 	</div>
-</div>
-</ion-content>
 
-<div class="fixed-action-btn hide" style="bottom: 15px; right: 24px;" hover="" id="magic-bubble">
-	<a class="btn-floating btn-large red">
-		<i class="icon ion-plus"></i>
+	<div class="fixed-action-btn " style="bottom: 30px; right: 14px;" id="magic-bubble-map">
+		<a class="btn-floating  waves-effect waves-light btn-large red">
+			<i class="ion-settings"></i>
 
-	</a>
-	<ul>
-
-		<li><a class="btn-floating pink darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-image"></i></a></li>
-		<li><a class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-microphone"></i></a></li>
-		<li ng-click="pickAPicture();"><a class="btn-floating orange darken-2" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-attach"></i></a></li>
-		<li ng-click="takePicture();"><a class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;" ><i class="icon ion-camera"></i></a></li>
-	</ul>
-</div>
+		</a>
+		<ul>
+			<li><a class="btn-floating pink  waves-effect waves-light darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-radio-button-off"></i></a></li>
+			<li><a class="btn-floating  waves-effect waves-light green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-star-outline"></i></a></li>
+			<li><a class="btn-floating  waves-effect waves-light orange darken-2" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-android-checkbox-outline-blank"></i></i></a></li>
+			<li><a class="btn-floating  waves-effect waves-light blue darken-2" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"><i class="ion-ios-location"></i></i></a></li>
+		</ul>
+	</div>
 </ion-view>
