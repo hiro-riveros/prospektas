@@ -2,6 +2,12 @@
   this.app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider
 
+    .state('leaflet', {
+      url        : '/leaflet',
+      templateUrl: 'templates/leaflet.html',
+      controller : 'ControlsDrawController'
+    })
+
     .state('welcome', {
       url        : '/welcome',
       templateUrl: 'templates/welcome.html',
@@ -22,7 +28,7 @@
     // })
 
 
-    $urlRouterProvider.otherwise('/welcome');
+    $urlRouterProvider.otherwise('/leaflet');
   })
 
 

@@ -43,13 +43,11 @@
 		      var long = position.coords.longitude;
 		      alert('y si miro tu posicion latitude: '+ lat +' longitude: ' + long );
 	  	});
-=======
 		// var lat = ;
 		// var long = ;
 
 		var a=0;
 
->>>>>>> 411b1310eff8a6dbe224167748736c52116a90bd
 
 
 		/**
