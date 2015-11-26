@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://localhost:8100/#/map_jitney -->
+<html><script type="text/javascript" src="chrome-extension://iigcccneenmnplhhfhaeahiofeeeifpn/scripts/cordova.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link type="text/css" rel="stylesheet" href="./localhost_files/css"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}.gm-style img{max-width:none}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <script>
+      // Injected Ionic Go To URL Live Reload Plugin
+      window.LiveReloadPlugin_IonicGoToUrl = (function() {
+        var GOTO_KEY = "__ionic_goto_url__";
+        var HISTORY_GO_KEY = "__ionic_history_go__";
+        var GoToUrlPlugin = function(window, host) {
+          this.window = window;
+          this.host = host;
+        }
+        GoToUrlPlugin.identifier = "__ionic_goto_url__";
+        GoToUrlPlugin.version = "1.0";
+        GoToUrlPlugin.prototype.reload = function(path) {
+          try {
+            if(path) {
+              if(path.indexOf(GOTO_KEY) === 0) {
+                this.window.document.location = path.replace(GOTO_KEY, "");
+                return true;
+              }
+              if(path.indexOf(HISTORY_GO_KEY) === 0) {
+                this.window.document.history.go( parseInt(path.replace(HISTORY_GO_KEY, ""), 10));
+                return true;
+              }
+            }
+          } catch(e) {
+            console.log(e);
+          }
+          return false;
+        };
+        return GoToUrlPlugin;
+      })();
+    </script>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="./localhost_files/ionic.css" rel="stylesheet">
+    <link href="./localhost_files/materialize.css" rel="stylesheet">
+    <link href="./localhost_files/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="./localhost_files/lodash.js"></script>
+    <script src="./localhost_files/ionic.bundle.js"></script>
+    <script src="./localhost_files/jquery.js"></script>
+    <script src="./localhost_files/materialize.js"></script>
+    <script src="./localhost_files/angular-simple-logger.js"></script>
+    <script src="./localhost_files/js"></script>
+    <script src="./localhost_files/map.js"></script>
+    <script src="./localhost_files/angular-google-maps.js"></script>
+    <script src="./localhost_files/ngGeolocation.js"></script>
+    <script src="./localhost_files/angular-restmod-bundle.js"></script>
+    <script src="./localhost_files/ngStorage.js"></script>
+    <script src="./localhost_files/underscore.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="./localhost_files/cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="./localhost_files/app.js"></script>
+    <script src="./localhost_files/platform_config.js"></script>
+    <script src="./localhost_files/router_config.js"></script>
+    <script src="./localhost_files/rootless-ams.js"></script>
+    <script src="./localhost_files/statics.js"></script>
+    <script src="./localhost_files/login_controller.js"></script>
+    <script src="./localhost_files/sign_up_controller.js"></script>
+    <script src="./localhost_files/map_jitney_controller.js"></script>
+    <script src="./localhost_files/map_passenger_controller.js"></script>
+    <script src="./localhost_files/configuration_controller.js"></script>
+    <script src="./localhost_files/edit_profile_controller.js"></script>
+    <script src="./localhost_files/user.js"></script>
+    <script src="./localhost_files/passenger.js"></script>
+    <script src="./localhost_files/jitney.js"></script>
+    <script src="./localhost_files/position.js"></script>
+    <script src="./localhost_files/car.js"></script>
+    <script src="./localhost_files/configuration.js"></script>
+    <script src="./localhost_files/local_storage_service.js"></script>
+    <script src="./localhost_files/http_header_interceptor.js"></script>
+    
+  <script type="text/javascript" charset="UTF-8" src="./localhost_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/map(1).js"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/onion.js"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/ViewportInfoService.GetViewportInfo"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/stats.js"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/controls.js"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/vt"></script><script type="text/javascript" charset="UTF-8" src="./localhost_files/AuthenticationService.Authenticate"></script><script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1shttp%3A%2F%2Flocalhost%3A8100%2F%23%2Fmap_jitney&5e0&6u1&7scumv8q&callback=_xdc_._3twjd1&token=61285"></script></head>
+  <body ng-app="jitney" class="grade-a platform-browser platform-ios platform-ios7 platform-ios7_1 platform-ready">
+    <ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe="">
+      <ion-view class="pane"></ion-view>
+    <ion-view class="map-view-jitney pane" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+	<ion-content class="scroll-content ionic-scroll"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+		<section class="map-content">
+			<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options" data-tap-disabled="true" class="angular-google-map"><div class="angular-google-map"><div class="angular-google-map-container" style="position: relative; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 4px; top: 172px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -252px; top: 172px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 4px; top: -84px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 4px; top: 428px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 260px; top: 172px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -252px; top: -84px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -252px; top: 428px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 260px; top: -84px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 260px; top: 428px;"></div></div></div></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"></div><div style="position: absolute; z-index: 0; transform: translateZ(0px); left: 0px; top: 0px;"><div style="overflow: hidden;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="transform: translateZ(0px); position: absolute; left: -252px; top: -84px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(1)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 4px; top: -84px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(2)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 260px; top: -84px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(3)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 260px; top: 428px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(4)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 4px; top: 428px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(5)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 260px; top: 172px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(6)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: -252px; top: 428px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(7)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: -252px; top: 172px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(8)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 4px; top: 172px; transition: opacity 200ms ease-out;"><img src="./localhost_files/vt(9)" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 38px; top: 230px; background-color: white;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2015 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000;"><img src="./localhost_files/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><img src="./localhost_files/transparent.png" draggable="false" style="width: 37px; height: 37px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; position: absolute; right: 0px; top: 0px; z-index: 10001; cursor: pointer;"></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 0px; bottom: 0px; width: 12px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span>Map data ©2015 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2015 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; -webkit-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><div class="gmnoprint" draggable="false" controlwidth="28" controlheight="55" style="margin: 10px; -webkit-user-select: none; position: absolute; bottom: 55px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 0px;"><div draggable="false" style="-webkit-user-select: none; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; width: 28px; height: 55px; background-color: rgb(255, 255, 255);"><div title="Zoom in" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img src="./localhost_files/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; top: 0px; background-color: rgb(230, 230, 230);"></div><div title="Zoom out" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img src="./localhost_files/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: -15px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div></div></div></div><div class="gmnoprint" draggable="false" controlwidth="0" controlheight="0" style="margin: 10px; -webkit-user-select: none; position: absolute; display: none; bottom: 26px; left: 0px;"><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; cursor: pointer; display: none; background-color: rgb(255, 255, 255);"><img src="./localhost_files/tmapctrl4_hdpi.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);"><img src="./localhost_files/tmapctrl4_hdpi.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=-33.436751,-70.645202&z=15&t=m&hl=en-US&gl=US&mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img src="./localhost_files/google4_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div></div></div><div ng-transclude="" style="display: none">
+				<span class="angular-google-map-markers" ng-transclude="" models="jitnies" coords="&#39;self&#39;" icon="&#39;icon&#39;" idkey="&#39;id&#39;">
+        </span>
+			</div></div></ui-gmap-google-map>
+			<div class="row ui-buttons">
+				<div class="col s12">
+					<button class="btn waves-effect waves-light btn-large" id="btn-add-passenger" type="submit" name="action" ng-click="addPassenger()" ng-class="{ success: car.passengers &gt; 0 &amp;&amp; car.passengers &lt; 1, warm: car.passengers == 2, danger: car.passengers == 3 }" disabled="disabled">
+						<i class="icon ion-plus-round"></i>
+					</button>
+					<button class="btn waves-effect waves-light btn-large" type="submit" name="action" id="btn-remove-passenger" ng-click="removePassenger()" ng-class="{ success: car.passengers &gt;= 0 &amp;&amp; car.passenger &lt;= 1, warm: car.passengers == 2, danger: car.passengers == 3 }" disabled="disabled">
+									<i class="icon ion-minus-round"></i>
+					</button>
+					<a class="btn-floating btn-large waves-effect waves-light light-blue darken-4" ng-click="goToConfigurations()">
+						 <i class="icon ion-gear-b"></i>
+					</a>
+				</div>
+			</div>
+			<div class="row search-passenger">
+				<div class="col s12">
+					<button class="btn waves-effect waves-light btn-large btn-search-passenger" type="submit" name="action" ng-click="searchPassengers()">
+									activar busqueda
+									<i class="icon ion-navigate"></i>
+					</button>
+				</div>
+			</div>
+		</section>
+	</div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 642px;"></div></div></ion-content>
+</ion-view></ion-nav-view>
+  
+<script>//<![CDATA[
+document.write('<script src="//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1"><\/script>')
+//]]></script><script src="./localhost_files/livereload.js"></script>
+
+
+<div class="hiddendiv common"></div><div class="backdrop"></div></body></html>
